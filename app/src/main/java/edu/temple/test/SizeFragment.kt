@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
+import androidx.recyclerview.widget.RecyclerView
 
 class SizeFragment : Fragment() {
 
+    private lateinit var textViewModel : TextViewModel
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -31,6 +34,8 @@ class SizeFragment : Fragment() {
 
                     // Inform parent about slider event with updated value
                     (requireActivity() as ValueChangeInterface).onChange(progress)
+
+
                 }
                 override fun onStartTrackingTouch(p0: SeekBar?) {}
                 override fun onStopTrackingTouch(p0: SeekBar?) {}

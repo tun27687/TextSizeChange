@@ -10,7 +10,7 @@ import android.widget.TextView
 class TextFragment : Fragment() {
 
     private lateinit var textView: TextView
-
+private lateinit var  textViewModel: TextViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -18,6 +18,9 @@ class TextFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_text, container, false).apply {
             textView = findViewById(R.id.textView)
+          textViewModel= getTextSize().observe(requireActivity()){
+
+          }
         }
     }
 
